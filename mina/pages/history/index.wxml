@@ -1,0 +1,15 @@
+<view class="container">
+
+    <view>
+        <view class="nofoundImg">
+            <image src="../../images/not_found.png"/>
+        </view>
+        <view class="nofoundText">
+            <text>请选择题库后再练习哦!</text>
+        </view>
+        <view class="btn">
+            <button>去选择</button>
+        </view>
+    </view>
+    
+</view>

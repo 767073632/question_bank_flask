@@ -1,0 +1,310 @@
+/* pages/index.wxss */
+page{
+  height: 100%;
+}
+.top{
+  width: 100%;
+  height: 200px;
+  background-color: #b4189d;
+  color: white;
+}
+.top .topItem{
+  display: flex;
+  flex-direction: row;
+}
+.grasp{
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  margin-left: 20px;
+  margin-top: 15px;
+  text-align: center;
+  border: 4px solid #c441a9;
+  position: relative;
+}
+.grasp .txt{
+  margin-top: 14px;
+  font-size: 14px;
+}
+.grasp .percent{
+  font-size: 18px;
+}
+.pullItem{
+  background-color: #b4189d;
+  position: absolute;
+  right: 0px;
+}
+.pullDown{
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  width: 105px;
+  padding-left: 15px;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  background-color: #94229e;
+  right: 0px;
+  border-radius: 0px;
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
+}
+.set{
+  margin-top: 4px;
+  font-size: 11px;
+}
+.itemContain{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  margin-left: 5%;
+  width: 90%;
+  height: 180px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: white;
+}
+.questionTitle{
+  position: relative;
+  display: flex;
+  margin-top: 220px;
+  margin-left: 5%;
+  margin-bottom: 30px;
+  width: 90%;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: white;
+}
+.itemList{
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  margin-top: 5px;
+}
+.btnItem{
+  width: 130rpx;
+  height: 130rpx;
+  text-align: center;
+  padding:10px 5px 5px 10px;
+  color: #bfbfbf;
+}
+.btnItem .icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80rpx;
+  height: 80rpx;
+  margin-left: 25rpx;
+  border-radius: 50%;
+  background-color: #bf1399;
+}
+.btnItem image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.btnItem text{
+  font-size: 12px;
+}
+.questionTitle{
+  display: flex;
+  flex-direction: column;
+}
+
+/*内容*/
+.titleItem{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 80px;
+  color: #515151;
+  align-items: center;
+}
+/*内容*/
+.innerTitleItem{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 80px;
+  color: #515151;
+  align-items: center;
+  /* background-color: palegreen; */
+}
+.pageInfo image{
+  width: 35rpx;
+  height: 35rpx;
+}
+.titleContent progress{
+  margin-top: 15px;
+  width: 420rpx;
+}
+.titleItem .titleIconContent{
+  width: 115rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.titleItem .titleIcon{
+  width: 25rpx;
+  height: 25rpx;
+  background-color: #bf1399;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.titleItem .titleContent{
+  font-size: 16px;
+}
+.innerTitleItem .titleContent{
+  font-size: 14px;
+}
+.pageInfo .pageNum{
+  font-size: 14px;
+}
+.pageInfo .choose{
+  font-size: 12px;
+  color: #bf1399;
+}
+.innerTitleItem .questionContain{
+  display: flex;
+  flex-direction: row;
+}
+.innerTitleItem .titleIconContent{
+  width: 115rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.innerTitleItem .innerTitleLine{
+  width: 0.5px;
+  height: 155px;
+  position: absolute;
+  background-color: #bf1399;
+}
+.innerTitleItem .titleIcon{
+  width: 15rpx;
+  height: 15rpx;
+  background-color: #bf1399;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.titleIcon image{
+  width: 15rpx;
+  height: 15rpx;
+}
+.pageInfo{
+  text-align: center;
+  margin-left: 10px;
+  width: 95rpx;
+}
+.footer{
+  position: relative;
+  background-color: #f7f7f9;
+  width: 100%;
+  height: 1px;
+}
+/***下拉按钮弹出页面***/
+.checkContain{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+.checkContain .checkItemContain{
+  width: 70%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.checkItemContain .checkContent{
+  width: 100%;
+  height: 90%;
+}
+.checkItemContain .subject{
+  width: 90%;
+  height: 50px;
+  background-color: #f7f7f9;
+  text-align: center;
+  display: flex;
+  margin-left: 5%;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+  color: #515151;
+  font-size: 16px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.checkItemContain .more{
+  width: 90%;
+  height: 7%;
+  background-color: #bf1399;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+}
+.checkContain .hyaline{
+  width: 30%;
+  height: 100%;
+  opacity: 0.20;
+  background-color:#999;
+}
+
+/***圆形进度***/
+.progress_box{
+  position: relative;
+  width:100px;
+  height: 100px;  
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+  background-color: #b4189d;
+  margin-left: 10px;
+}
+.progress_bg{
+  position: absolute;
+  width:100px;
+  height: 100px;
+}
+.progress_canvas{ 
+  width:100px;
+  height: 100px;
+} 
+.progress_text{ 
+  position: absolute; 
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.progress_text .txt{
+  font-size: 14px;
+}
+.progress_text .percent{
+  font-size: 18px;
+}
+.progress_info{   
+  font-size: 36rpx;
+  padding-left: 16rpx;
+  letter-spacing: 2rpx
+} 

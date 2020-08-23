@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/home",
+    "pages/user/my-exams",
+    "pages/user/my-unexam",
+    "pages/user/my-favs",
+    "pages/user/incorrects",
+    "pages/user/vip-buy",
+    "pages/user/vip-buy-ios",
+    "pages/user/vip-buy-gift",
+    "pages/user/user-reg",
+    "pages/user/settings",
+    "pages/history/index",
+    "pages/exercise/exercise",
+    "pages/user/vip-snactive"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#b4189d",
+    "navigationBarTitleText": "",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "color": "#555",
+    "selectedColor": "#4b8ef9",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "题库",
+        "iconPath": "images/icon-home.png",
+        "selectedIconPath": "images/icon-home-s.png"
+      },
+      {
+        "pagePath": "pages/user/home",
+        "text": "我的",
+        "iconPath": "images/icon-user.png",
+        "selectedIconPath": "images/icon-user-s.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 60000,
+    "downloadFile": 60000
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "在线题库",
+    "navigationBarBackgroundColor": "#b01a9f",
+    "enablePullDownRefresh": false,
+    "backgroundTextStyle": "dark"
+}

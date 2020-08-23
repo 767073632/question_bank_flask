@@ -1,0 +1,181 @@
+{% extends "common/layout_main.html" %}
+{% block content %}
+<div class="row  border-bottom">
+    <div class="col-lg-12">
+        <div class="tab_title">
+                <ul class="nav nav-pills">
+                <li >
+                        <a href="{{ buildUrl('/question/type1_index') }}">专业列表</a>
+                </li>
+                <li >
+                    <a href="{{ buildUrl('/question/type2_index') }}?parent_id={{ parent_id.0}}">章节列表</a>
+                </li>
+                    <li>
+                        <a href="{{ buildUrl('/question/type3_index') }}?parent_id={{ parent_id.1 }}">小节列表</a>
+                    </li>
+                    <li class="current">
+                        <a href="{{ buildUrl('/question/question_index') }}?parent_id={{ parent_id.2 }}">题目列表</a>
+                    </li>
+                </ul>
+        </div>
+    </div>
+</div>
+<div class="row mg-t20 wrap_category_type1_set" style="">
+    <div class="col-lg-12" style="">
+        <h2 class="text-center">题目设置</h2>
+        <div class="form-horizontal m-t" style="">
+            <div class="form-group">
+                <label class="col-lg-2 control-label">题目类型:</label>
+                <div class="col-lg-10">
+                    <select name="type" class="form-control select2-hidden-accessible" tabindex="-1"
+                            aria-hidden="true">
+                        <option selected value="1">单选题</option>
+                        <option {% if info.type=="2" %}selected{% endif %} value="2">多选题</option>
+                        <option {% if info.type=="3" %}selected{% endif %} value="3">问答题</option>
+                        <option {% if info.type=="4" %}selected{% endif %} value="4">判断题</option>
+                    </select>
+                </div>
+            </div>
+        <div class="hr-line-dashed"></div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">名称:</label>
+                <div class="col-lg-10">
+                    <textarea id="editor" name="name" style="height: 32px; margin: 0px; width: 451px;">{{ info.name }}</textarea>
+                </div>
+            </div>
+        <div class="hr-line-dashed"></div>
+        {% if choices %}
+            <div class='single_choice'>
+            <div class="hr-line-dashed"></div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">选项</label>
+            </div>
+            <div class="form-group choices">
+                {% for choice in choices %}
+                <label class="col-lg-2 control-label">{{choice.0}}:</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" placeholder="请输入选项内容" name="choice" value="{{ choice.1 }}">
+                </div>
+                {% endfor %}
+                <label class="col-lg-2 control-label">{{end_chr}}:</label>
+                <div class="col-lg-10">
+                        <a class="add_choice btn btn-w-m btn-outline btn-primary pull-left">
+                            <i class="fa fa-plus"></i>添加选项
+                        </a>
+                    <a class="minus_choice btn btn-w-m btn-outline btn-primary pull-left">
+                            <i class="fa fa-minus"></i>删除上一选项
+                        </a>
+                </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">答案:</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" placeholder="请输入答案" name="answer" value="{{ info.answer }}">
+                </div>
+            </div>
+            </div>
+        {% endif %}
+
+        {% if not info %}
+        <div class='single_choice'>
+            <div class="hr-line-dashed"></div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">选项</label>
+            </div>
+            <div class="form-group choices">
+                <label class="col-lg-2 control-label">A:</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" placeholder="请输入选项内容" name="choice" value="">
+                </div>
+                <label class="col-lg-2 control-label">B:</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" placeholder="请输入选项内容" name="choice" value="">
+                </div>
+                <label class="col-lg-2 control-label">C:</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" placeholder="请输入选项内容" name="choice" value="">
+                </div>
+                <label class="col-lg-2 control-label">D:</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" placeholder="请输入选项内容" name="choice" value="">
+                </div>
+                <label class="col-lg-2 control-label">E:</label>
+                <div class="col-lg-10">
+                        <a class="add_choice btn btn-w-m btn-outline btn-primary pull-left">
+                            <i class="fa fa-plus"></i>添加选项
+                        </a>
+                    <a class="minus_choice btn btn-w-m btn-outline btn-primary pull-left">
+                            <i class="fa fa-minus"></i>删除上一选项
+                        </a>
+                </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">答案:</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" placeholder="请输入答案" name="answer" value="">
+                </div>
+            </div>
+            </div>
+        {% endif %}
+
+        {% if info.type=='4' %}
+        <div class='judgment'>
+            <div class="hr-line-dashed"></div>
+            <div class="form-group choices">
+                <label class="col-lg-2 control-label">正确</label>
+                    <input type="radio" class="pull-left" style="width: 20px;height: 20px;" name="choice" value="1" {% if info.answer=='1' %}checked{% endif %}>
+                <label class="col-lg-2 control-label" style="width: 5%">错误</label>
+                    <input type="radio" class="pull-left control-label"  style="width: 20px;height: 20px;" name="choice" value="0" {% if info.answer=='0' %}checked{% endif %}>
+            </div>
+        </div>
+            {% else %}<div class='judgment' hidden>
+            <div class="hr-line-dashed"></div>
+            <div class="form-group choices">
+                <label class="col-lg-2 control-label">正确</label>
+                    <input type="radio" class="pull-left" style="width: 20px;height: 20px;" name="choice" value="1" checked>
+                <label class="col-lg-2 control-label" style="width: 5%">错误</label>
+                    <input type="radio" class="pull-left control-label"  style="width: 20px;height: 20px;" name="choice" value="0">
+            </div>
+        </div>
+        {% endif %}
+
+
+        <div class='anser_question' {% if info.type=='4' or info.type=='2' or info.type=='1' or not info%}hidden{% endif %}>
+            <div class="hr-line-dashed"></div>
+            <div class="form-group">
+            <label class="col-lg-2 control-label">答案:</label>
+            <div class="col-lg-10">
+                <textarea id="editor" name="answer" style="height: 192px; margin: 0px; width: 423px;">{{ info.answer }}</textarea>
+            </div>
+            </div>
+        </div>
+
+
+<div class="hr-line-dashed"></div>
+
+
+
+            <div class="form-group">
+                <label class="col-lg-2 control-label">解析:</label>
+                <div class="col-lg-10">
+                    <textarea id="editor" name="explanation" style="height: 192px; margin: 0px; width: 423px;">{{ info.explanation }}</textarea>
+                </div>
+            </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+            <div class="form-group">
+                <div class="col-lg-4 col-lg-offset-2">
+                    <input type="hidden" name="id" value="{{info.id}}" >
+                    <input type="hidden" name="parent_id" value="{{parent_id.2}}">
+                    <button class="btn btn-w-m btn-outline btn-primary save">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+<script src="{{ buildStaticUrl('/js/category_question/question/set.js') }}"></script>
+{% endblock %}

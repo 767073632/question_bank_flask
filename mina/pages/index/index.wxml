@@ -1,0 +1,317 @@
+
+<view class="page">
+  <!--顶部top-->
+  <view class="top">
+
+    <!--下拉弹出页面-->
+    <view class="checkContain" catchtouchmove="stopScroll" style="{{checkStyle}}">
+      <view class="checkItemContain">
+        <view class="checkContent">
+          <view class="leftTop"></view>
+          <view class="subject">教育学</view>
+          <view class="rightBottom"></view>
+        </view>
+        <view class="more">更多科目</view>
+      </view>
+      <view class="hyaline" bindtouchstart="checkNone"></view>
+    </view>
+
+    <!--顶部内容-->
+    <view class="topItem">
+      <!--掌握程度-->
+      <view class="container">
+          <view class='progress_box'>
+              <canvas class="progress_bg"   canvas-id="canvasProgressbg" style="{{progressIndex}}">  </canvas> 
+              <canvas class="progress_canvas"   canvas-id="canvasProgress" style="{{progressIndex}}">  </canvas> 
+              <view class="progress_text">
+                  <view class="txt">掌握度</view>
+                  <view class="percent">{{percent}}%</view>
+              </view>     
+          </view>
+      </view>
+      <!--掌握程度-->
+
+      <!--下拉选项-->
+      <view class="pullItem">
+        <!--下拉框-->
+        <view class="pullDown" bindtap="pullDown">
+          <view>法硕（法学）</view>
+          <image src="{{pulldownIcon}}" style="width:14px;height:14px;margin-top: 4px;"></image>
+        </view>
+        <!--下拉框-->
+        <!--文字-->
+        <view class="set">
+          <view>共有2439题  已答0题</view>
+        </view>
+        <!--文字-->
+      </view>    
+      <!--下拉选项-->
+    </view>
+    <!--顶部内容-->
+
+    <!--上层按钮-->
+  <view class="itemContain">
+    <!--两层按钮-->
+    <view class="itemList">
+      <view class="btnItem" bindtap="randomPractice">
+          <view class="icon">
+            <image src="../../images/random.png" />
+          </view>
+          <text>随机练习</text>
+      </view>
+      <view class="btnItem" bindtap="failQuestion">
+          <view class="icon">
+            <image src="../../images/fail_question.png" />
+          </view>
+          <text>错题集</text>
+      </view>
+      <view class="btnItem" bindtap="collection">
+          <view class="icon">
+            <image src="../../images/collect.png" />
+          </view>
+          <text>我的收藏</text>
+      </view>
+      <view class="btnItem" bindtap="notes">
+          <view class="icon">
+            <image src="../../images/pen.png" />
+          </view>
+          <text>我的笔记</text>
+      </view>
+    </view>
+    <view class="itemList">
+      <view class="btnItem" bindtap="practiseHistory">
+          <view class="icon">
+            <image src="../../images/practise_history.png" />
+          </view>
+          <text>练习历史</text>
+      </view>
+      <view class="btnItem" bindtap="questionSetting">
+          <view class="icon">
+            <image src="../../images/question_setting.png" />
+          </view>
+          <text>题库设置</text>
+      </view>
+      <view class="btnItem"></view>
+      <view class="btnItem"></view>
+    </view>
+    <!--两层按钮--> 
+  </view>
+  <!--上层按钮-->
+      
+  <!--下层内容-->
+  <view class="questionTitle">
+    <!--内容-->
+    <view>
+      <!--大标题--->
+      <view class="titleItem">
+        <!--titleIcon内容-->
+        <view class="titleIconContent" data-number="0" bindtap="extend">
+          <view class="titleIcon">
+            <image src="{{itemIcon[0]}}" />
+          </view>
+        </view>
+        <!--titleIcon内容-->
+        <view class="titleContent">
+          <!---标题-->
+          <view class="title">
+            第一篇 教育学原理
+          </view>
+          <progress stroke-width="1" percent="1"></progress>
+          <!---标题-->
+        </view>
+        <view class="pageInfo">
+          <!---标题-->
+          <view class="pageNum">
+            2/353
+          </view>
+          <image src="../../images/shop.png" />
+          <!---标题-->
+        </view>
+      </view>
+      <!--大标题--->
+
+      <!--小标题-->
+      <view class="innerTitle" style="{{innerTitleStyle[0]}}">
+        <!--小标题内容-->
+        <view class="innerTitleItem">
+          <!--titleIcon内容-->
+          <view class="titleIconContent">
+            <view class="titleIcon"></view>
+            <view class="innerTitleLine"></view>
+          </view>
+          <!--titleIcon内容-->
+          <view class="questionContain" bindtap="exercise">
+            <view class="titleContent">
+              <!---标题-->
+              <view class="title">
+                第01章 教育学概述
+              </view>
+              <progress stroke-width="1" percent="1"></progress>
+              <!---标题-->
+            </view>
+            <view class="pageInfo">
+              <!---标题-->
+              <view class="pageNum">
+                1/54
+              </view>
+              <view class="choose">试用</view>
+              <!---标题-->
+            </view>
+          </view>
+        </view>  
+        <!--小标题内容-->
+        <!--小标题内容-->
+        <view class="innerTitleItem">
+          <!--titleIcon内容-->
+          <view class="titleIconContent">
+            <view class="titleIcon"></view>
+          </view>
+          <!--titleIcon内容-->
+          <view class="questionContain" bindtap="exercise">
+            <view class="titleContent">
+              <!---标题-->
+              <view class="title">
+                第02章 教育及其产生与发展
+              </view>
+              <progress stroke-width="1" percent="1"></progress>
+              <!---标题-->
+            </view>
+            <view class="pageInfo">
+              <!---标题-->
+              <view class="pageNum">
+                1/54
+              </view>
+              <view class="choose">试用</view>
+              <!---标题-->
+            </view>
+          </view>
+        </view>  
+        <!--小标题内容-->
+      </view>
+      <!--小标题-->
+
+    </view>
+    <!--内容-->
+
+    <!--内容-->
+    <view class="titleItem">
+      <!--titleIcon内容-->
+      <view class="titleIconContent" data-number="1" bindtap="extend">
+        <view class="titleIcon">
+          <image src="{{itemIcon[1]}}" />
+        </view>
+        <view class="titleLine"></view>
+      </view>
+      <!--titleIcon内容-->
+      <view class="titleContent">
+        <!---标题-->
+        <view class="title">
+          第二篇 中外教育史
+        </view>
+        <progress stroke-width="1" percent="1"></progress>
+        <!---标题-->
+      </view>
+      <view class="pageInfo">
+        <!---标题-->
+        <view class="pageNum">
+          2/353
+        </view>
+        <image src="../../images/shop.png" />
+        <!---标题-->
+      </view>
+    </view>
+    <!--内容--> 
+    <!--内容-->
+    <view class="titleItem">
+      <!--titleIcon内容-->
+      <view class="titleIconContent" data-number="2" bindtap="extend">
+        <view class="titleIcon">
+          <image src="{{itemIcon[2]}}" />
+        </view>
+        <view class="titleLine"></view>
+      </view>
+      <!--titleIcon内容-->
+      <view class="titleContent">
+        <!---标题-->
+        <view class="title">
+          第三篇 教育心里学
+        </view>
+        <progress stroke-width="1" percent="1"></progress>
+        <!---标题-->
+      </view>
+      <view class="pageInfo">
+        <!---标题-->
+        <view class="pageNum">
+          2/353
+        </view>
+        <image src="../../images/shop.png" />
+        <!---标题-->
+      </view>
+    </view>
+    <!--内容--> 
+    <!--内容-->
+    <view class="titleItem">
+      <!--titleIcon内容-->
+      <view class="titleIconContent" data-number="3" bindtap="extend">
+        <view class="titleIcon">
+          <image src="{{itemIcon[3]}}" />
+        </view>
+        <view class="titleLine"></view>
+      </view>
+      <!--titleIcon内容-->
+      <view class="titleContent">
+        <!---标题-->
+        <view class="title">
+          第四篇 教育研究方法
+        </view>
+        <progress stroke-width="1" percent="1"></progress>
+        <!---标题-->
+      </view>
+      <view class="pageInfo">
+        <!---标题-->
+        <view class="pageNum">
+          2/353
+        </view>
+        <image src="../../images/shop.png" />
+        <!---标题-->
+      </view>
+    </view>
+    <!--内容-->
+    <!--内容-->
+    <view class="titleItem">
+      <!--titleIcon内容-->
+      <view class="titleIconContent" data-number="4" bindtap="extend">
+        <view class="titleIcon">
+          <image src="{{itemIcon[4]}}" />
+        </view>
+        <view class="titleLine"></view>
+      </view>
+      <!--titleIcon内容-->
+      <view class="titleContent">
+        <!---标题-->
+        <view class="title">
+          历史考研真题汇编（精华版）
+        </view>
+        <progress stroke-width="1" percent="1"></progress>
+        <!---标题-->
+      </view>
+      <view class="pageInfo">
+        <!---标题-->
+        <view class="pageNum">
+          2/353
+        </view>
+        <image src="../../images/shop.png" />
+        <!---标题-->
+      </view>
+    </view>
+    <!--内容-->   
+  </view>
+  <!--下层内容-->
+
+  <view class="footer"></view>
+
+  </view>
+  <!--顶部top-->
+
+</view>  
+
